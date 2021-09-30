@@ -4,7 +4,7 @@ Whenever we execute a peiece of code , javaScript engine will execute the code t
 
 
 2. Where the JavaScript code gets executed?
-JavaScript code gets executed in global execution context
+JavaScript code gets executed in JS engine
 
 3. What does context means in Global Execution Context?
 Whenever we run a program javaScript engine will create global execution context under that everyhting or all part of code will get executed.
