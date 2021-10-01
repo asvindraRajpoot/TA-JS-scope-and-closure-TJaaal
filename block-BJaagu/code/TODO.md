@@ -1,7 +1,7 @@
 Find the output of the code snippets below:
 
 ```js
-console.log(numA + numB); //undefined
+console.log(numA + numB); //NaN
 var numA = 21,
   numB = 30;
 ```
@@ -55,7 +55,7 @@ function sayHello() {
 ```
 
 Find the output of the code snippets below:
-
+ 
 ```js
 let username = "Tyrion";
 sayHello(); // sayhello is not defined
