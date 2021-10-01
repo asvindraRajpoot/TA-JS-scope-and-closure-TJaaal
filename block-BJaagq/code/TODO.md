@@ -12,9 +12,9 @@ function change() {
   console.log(species);
 }
 
-console.log(species); // 1
+console.log(species); // human
 change();
-console.log(species); // 2
+console.log(species); // huamn
 ```
 
 <!-- Put your image below -->
@@ -35,8 +35,8 @@ function topLevelFn() {
   function nestedFn() {
     var anotherLocalVar = "Local to nestedFn's scope.";
 
-    console.log(localVar); // 1
-    console.log(topLevelVar); // 2
+    console.log(localVar); // "This is local to topLevelFn's scope
+    console.log(topLevelVar); // 'This is global scope!'
   }
 
   nestedFn();
@@ -82,3 +82,4 @@ console.log(one, two, three, four); // 5
 
 - Create the execution context diagram
 - What will be the value of 1, 2, 3, 4 and 5 or error if the code does not work
+4 is not defined
