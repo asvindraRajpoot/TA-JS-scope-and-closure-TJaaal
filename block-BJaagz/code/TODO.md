@@ -64,7 +64,7 @@ function filter(arr,cb) {
 
    
 
-   })
+   },0)
   return final;
 
 }
