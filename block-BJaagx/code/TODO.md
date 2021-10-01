@@ -18,15 +18,27 @@ function multiplyBy5(n) {
 }
 let numbersAddedFive = multiplyArrayByN(marks, addFive);
 let numbersMultipliedBy5 = multiplyArrayByN(marks, multiplyBy5);
+
+//multiplyArrayByn is higher order function and addFive,multiplyBy5 is callback function
 ```
 
 2. Create the execution context diagram of the above code snippet
+
+
+
+
+
 
 3. Write a higher order function that accepts a number and a operation function (callback function). Call the callback function passing the number as argument and return the returned value.
 
 ```js
 function operation(n, opFn) {
-  // your code goes her
+  // your code goes here
+
+ return opFn(n);
+
+
+
 }
 // TEST
 console.log(
@@ -48,6 +60,8 @@ console.log(
 ```js
 function operation(str, opFn) {
   // your code goes her
+
+  return opFn(str);
 }
 // TEST
 console.log(
