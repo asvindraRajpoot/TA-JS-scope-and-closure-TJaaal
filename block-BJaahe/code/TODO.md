@@ -24,7 +24,10 @@ outer('Asvindra');
 function delay(cb,waitTime){
 
 
-  return setTimeout(cb,waitTime);
+  return ()=>{
+
+    setTimeout(cb,waitTime);
+  };
 }
 delay(()=>{
   alert('asvindra');
@@ -67,11 +70,13 @@ function storyWriter() {
 
    return {
      addWords:(string)=>{
-     console.log( story.concat(string));
+      story= story.concat(string);
+      return story;
 
      },
      erase:()=>{
       story="";
+      return story;
      }
 
 
@@ -114,7 +119,7 @@ function forEach(arr) {
 
 }
 
-let next = [1, 2, 3, 4, 5];
+let next = forEach([1, 2, 3, 4, 5]);
 next(); // 1
 next(); // 2
 next(); // 3
@@ -193,12 +198,12 @@ function nameFactory(firstName,lastName){
     getFullName:()=>{
       return `${firstName} ${lastName}`
     },
-     setFirstName:(firstName)=>{
-       firstName=firstName;
+     setFirstName:(fn)=>{
+       firstName=fn;
       return `${firstName} ${lastName}`
     },
-     setLastName:(lastName)=>{
-      lastName=lastName;
+     setLastName:(ln)=>{
+      lastName=ln;
       return `${firstName} ${lastName}`
     },
   }
@@ -219,7 +224,9 @@ function createTag(name) {
   // your code goes here
   return (children)=>{
 
-    return (`<${name}> ${children} </${name}>`);
+    let elm=document.createElement(name);
+    elm.innerText=children;
+    return elm;
   }
 
 }
