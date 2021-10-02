@@ -68,7 +68,7 @@ var nextMessage = sayHello('Test');
 ```js
 //Declaration Phase
 
-var username;
+var username=undefined;
 let number ;
 
 function sayHello(name) {
@@ -76,7 +76,7 @@ function sayHello(name) {
 }
 
 let message;
-var nextMessage;
+var nextMessage=undefined;
 
 //execution phase
 console.log(username, numbers);
@@ -119,7 +119,7 @@ let sayHello = function (name) {
 };
 
 let message;
-var nextMessage;
+var nextMessage=undefined;
 
 //Execution phase
 
@@ -127,7 +127,9 @@ console.log(username, numbers);
  username = 'Arya';
  number = 21;
 
-
+sayHello = function (name) {
+  return `Hello ${name}`;
+};
 
  message = sayHello(username);
  nextMessage = sayHello('Test');
@@ -165,7 +167,7 @@ let sayHello = function (name) {
   return `Hello ${name}`;
 };
 
-var nextMessage;
+var nextMessage=undefined;
 
 //execution phase
  username = 'Arya';
@@ -173,6 +175,9 @@ console.log(username, numbers);
 
  number = 21;
  message = sayHello(username);
+ sayHello = function (name) {
+  return `Hello ${name}`;
+};
 
  nextMessage = sayHello('Test');
 ```
@@ -192,7 +197,7 @@ let age = 21;
 // Your code goes here
 //Decalration phase
 
-var name;
+var name=undefined;
 let age;
 
 //execution phase
@@ -291,6 +296,12 @@ let sayHi = function sayHi(name) {
 };
 //Execution phase
 sayHi();
+sayHi = function sayHi(name) {
+  console.log(name);
+  console.log(age);
+  var name = 'Lydia';
+  let age = 21;
+};
 
 ```
 
@@ -310,7 +321,7 @@ let num2 = 30;
 //Declaration phase
 let num1;
 
-var sum;
+var sum=undefined;
 let num2;
 //Execution phase
  num1 = 21;
@@ -343,7 +354,7 @@ let sum = add(num1, num2, 4, 5, 6);
 // Your code goes here
 
 //Declaration phase
-var num1;
+var num1=undefined;
 
 let sum2;
 
@@ -362,7 +373,9 @@ let sum;
 
  sum2 = addAgain(num1, num2, 4, 5, 6);
 
-
+add = (a, b, c, d, e) => {
+  return a + b + c + d + e;
+};
  num2 = 200;
 
  sum = add(num1, num2, 4, 5, 6);
