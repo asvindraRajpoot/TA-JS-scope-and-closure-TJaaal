@@ -52,7 +52,7 @@ function addOne(num){
   return num + 1;
 }
 var two = addOne(1);
-console.log(one, two);//
+console.log(one, two);//1,2
 ```
 
 5. Make a Execution Context Diagram for the following JS and write the output.
@@ -118,7 +118,7 @@ isAwesome();//true
 
 ```js
 function isAwesome() {
-  let awesome;
+  var awesome;
   if (false) {
     awesome = true;
   }
