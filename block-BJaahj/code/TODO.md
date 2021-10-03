@@ -192,7 +192,7 @@ function schedule(arrFn,arrTm) {
   }else{
 
     arrFn.forEach((fn,i)=>{
-      setTimeout(fn(),arrTm[i]);
+      setTimeout(fn,arrTm[i]*1000);
       // console.log(`${fn} will be executed after ${arrTm[i]}`)
 
     })
