@@ -113,15 +113,17 @@ function createCache(cb,str) {
   
 
    return (arg)=>{
-      if(('key' in obj))
-      {
-          console.log('key exist')
-          return
-      }
-    else{
+    
         if(arg!==str){
+          if(obj[arg]){
+            console.log('key exist');
+            return obj[arg];
+          }else{
+
+          
         obj[arg]= cb(arg);
-        console.log('it is called',arg);
+        return cb(arg);
+          }
 
         }else{
             return obj;
@@ -133,7 +135,7 @@ function createCache(cb,str) {
   
 
   }
-  }
+  
 
 
 }
