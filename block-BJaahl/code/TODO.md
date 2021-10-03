@@ -3,6 +3,19 @@
 ```js
 function once(cb) {
   // your code goes here
+  let count=0;
+  return ()=>{
+    count=count+1;
+    if(count===1){
+      cb();
+     
+      
+    }else{
+      return undefined;
+    }
+
+    
+  }
 }
 
 // TEST
@@ -17,8 +30,26 @@ log(); // return undefinde (can't be called twice)
 2. Change the above function in such a way that the function accepts two parameter a callback function and parameter for the callback function. When calling the function pass the parameters.
 
 ```js
-function once(cb) {
+function once(cb,param) {
   // your code goes here
+   let count=0;
+  return ()=>{
+    count=count+1;
+    if(count===1){
+     cb(param);
+    
+    }else if(count>1){
+       alert("You can only call me once!");
+      
+    }
+    else{
+      return undefined;
+    }
+
+    
+  }
+
+
 }
 
 // TEST
@@ -34,8 +65,30 @@ log(); // return undefinde (can't be called twice)
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters
 
 ```js
-function once(cb) {
+function once(cb,...param) {
   // your code goes here
+  let count=0;
+  return ()=>{
+     count=count+1;
+    if(count===1){
+      let out ="";
+      param.forEach(para=>{
+      out=out.concat(cb(para));
+      console.log(para,out);
+      return out;
+     })
+    
+    }else if(count>1){
+       alert("You can only call me once!");
+      
+    }
+    else{
+      return undefined;
+    }
+
+  }
+
+
 }
 
 // TEST
@@ -49,6 +102,13 @@ log(); // return undefinde (can't be called twice)
 ```js
 function nTimes(cb, times, ...rest) {
   // your code goes here
+  return ()=>{
+    for(let i=1;i<=times;i++){
+      rest.forEach(e=>{
+        cb(e);
+      })
+    }
+  }
 }
 
 // TEST
