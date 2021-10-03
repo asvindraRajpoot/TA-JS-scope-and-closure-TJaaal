@@ -70,26 +70,24 @@ function once(cb,...param) {
   let count=0;
   return ()=>{
      count=count+1;
-    if(count===1){
-      let out ="";
-      param.forEach(para=>{
-      out=out.concat(cb(para));
-      console.log(para,out);
-      return out;
-     })
+     if(count===1){
+      cb(...param);
+     
+     }
     
-    }else if(count>1){
+    else if(count>1){
        alert("You can only call me once!");
       
     }
     else{
       return undefined;
     }
-
-  }
-
-
 }
+    }
+
+
+
+
 
 // TEST
 let log = once(console.log, 'Message one', 'Message Two');
@@ -102,11 +100,15 @@ log(); // return undefinde (can't be called twice)
 ```js
 function nTimes(cb, times, ...rest) {
   // your code goes here
+  let noOfTimesCalled=0;
   return ()=>{
-    for(let i=1;i<=times;i++){
-      rest.forEach(e=>{
-        cb(e);
-      })
+    if(noOfTimesCalled>=times)
+    {
+      alert(`You can not call this function more than ${times}`)
+    }else{
+      cb(...rest);
+       noOfTimesCalled++;
+
     }
   }
 }
